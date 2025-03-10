@@ -1,9 +1,7 @@
-import { updateAvailability } from './../../../server/src/handlers/product';
-import { boolean, number, parse, pipe, safeParse, string, transform } from "valibot";
+import { number, parse, pipe, safeParse, string, transform } from "valibot";
 import { DraftProductSchema, Product, ProductSchema, ProductsSchema } from "../types";
 import axios from "axios";
 import { toBoolean } from "../utils";
-import { log } from 'console';
 
 type ProductData = {
     [k: string]: FormDataEntryValue;
