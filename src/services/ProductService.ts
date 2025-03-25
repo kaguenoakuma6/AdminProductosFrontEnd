@@ -16,6 +16,7 @@ export async function addProduct(data: ProductData)
             price: +data.price
         });
 
+  
         if(result.success)
         {
             const url = `${import.meta.env.VITE_SERVICE_HOST}/api/products`;
@@ -48,7 +49,8 @@ export async function getProducts()
 
         const { data } = await axios(url);
 
-        const result = safeParse(ProductsSchema, data.data);
+
+        const result = safeParse(ProductsSchema, data);
 
         if(result.success)
         {
@@ -75,7 +77,7 @@ export async function getProductById(id: Product['id'])
 
         const { data } = await axios(url);
 
-        const result = safeParse(ProductSchema, data.data);
+        const result = safeParse(ProductSchema, data);
 
         if(result.success)
         {
@@ -112,9 +114,8 @@ export async function updateProduct(data: ProductData, id: Product['id'])
         {
             const url = `${import.meta.env.VITE_SERVICE_HOST}/api/products/${id}`;
             await axios.put(url, result.output);
+            
         }
-        
-        
     } 
     catch (error) 
     {

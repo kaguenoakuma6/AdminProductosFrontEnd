@@ -1,5 +1,10 @@
 # React + TypeScript + Vite
 
+#Agregar variable de entorno VITE_SERVICE_HOST
+
+Para implementar Backend desde Node en los metodos get  se obtiene la informacion en el segundo nivel: data.data
+Para implementar Backend desde Spring Bood en los metodos get se obtiene la informacion desde en el primer nivel: data
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
